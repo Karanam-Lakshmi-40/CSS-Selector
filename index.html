@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="publication">
+		<h1 class="publicationdate">PUBLICATION DATE: 10/30/2020</h1>
+	</div>
+	<div class="object">
+		<h1 class="objectdata">OBJECT:Price Registration for a period of 12 months, for the purchase of galvanized clamps.</h1>
+	</div>
+	<div class="bidding">
+		<h1 class="biddingdate">BIDDING DATE: 10/30/2020</h1>
+	</div>
+
+	<button type="button" name="extract"  onclick="getExtract();">Extract Values Using Css Selectors</button><br>
+	Result:<br>
+	<table border="1">
+		<tr>
+			<th>
+				Category
+			</th>
+			<th>Extract using Query Selector</th>
+			<th> Extract Using get Element by CSS </th>
+		</tr>
+		<tr id="selector">
+
+		</tr>
+		<tr id="selector1">
+
+		</tr>
+		<tr id="selector2">
+
+		</tr>
+	</table>
+	<h2 id="demo"></h2>
+</body>
+</html>
+<script type="text/javascript">
+function getExtract()
+{
+	var publicTag=document.querySelectorAll("h1"); 
+	var publicClass=document.getElementsByClassName("publicationdate");
+	var objectClass=document.getElementsByClassName("objectdata"); 
+	var biddingClass=document.getElementsByClassName("biddingdate"); 
+	 document.getElementById('selector').innerHTML += '<td>Publication Date</td><td>'+publicTag[0].innerHTML+'</td><td>'+publicClass[0].innerHTML+'</td>';
+	 document.getElementById('selector1').innerHTML += '<td>Object</td><td>'+publicTag[1].innerHTML+'</td><td>'+objectClass[0].innerHTML+'</td>';
+	 document.getElementById('selector2').innerHTML += '<td>Bidding Date</td><td>'+publicTag[2].innerHTML+'</td><td>'+biddingClass[0].innerHTML+'</td>';
+
+}
+	
+</script>
